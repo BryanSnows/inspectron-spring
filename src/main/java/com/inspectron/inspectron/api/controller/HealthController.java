@@ -1,4 +1,4 @@
-package com.inspectron.inspectron.api;
+package com.inspectron.inspectron.api.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
