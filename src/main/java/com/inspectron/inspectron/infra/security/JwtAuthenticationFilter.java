@@ -1,8 +1,8 @@
 package com.inspectron.inspectron.infra.security;
 
-import com.inspectron.inspectron.api.domain.user.entity.User;
-import com.inspectron.inspectron.api.repository.UserRepository;
-import com.inspectron.inspectron.api.service.AuthService;
+import com.inspectron.inspectron.domain.user.entity.User;
+import com.inspectron.inspectron.repository.UserRepository;
+import com.inspectron.inspectron.service.AuthService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
