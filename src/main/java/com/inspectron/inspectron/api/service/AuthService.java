@@ -1,6 +1,6 @@
 package com.inspectron.inspectron.api.service;
 
-import com.inspectron.inspectron.api.config.JwtProperties;
+import com.inspectron.inspectron.infra.security.JwtProperties;
 import com.inspectron.inspectron.api.domain.auth.dto.AuthResponse;
 import com.inspectron.inspectron.api.domain.auth.dto.CredentialsRequest;
 import com.inspectron.inspectron.api.domain.user.dto.UserResponse;

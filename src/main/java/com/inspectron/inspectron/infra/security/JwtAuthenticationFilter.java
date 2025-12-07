@@ -1,4 +1,4 @@
-package com.inspectron.inspectron.api.config;
+package com.inspectron.inspectron.infra.security;
 
 import com.inspectron.inspectron.api.domain.user.entity.User;
 import com.inspectron.inspectron.api.repository.UserRepository;
@@ -28,6 +28,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final AuthService authService;
     private final UserRepository userRepository;
 
+    // Inspeciona cada requisição, valida o token e autentica o usuário na SecurityContext.
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
@@ -48,6 +49,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
+    // Define o usuário autenticado no contexto de segurança a partir dos dados do token.
     private void setAuthentication(User user, HttpServletRequest request) {
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());

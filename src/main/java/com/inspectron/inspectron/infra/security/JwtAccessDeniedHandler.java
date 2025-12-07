@@ -1,4 +1,4 @@
-package com.inspectron.inspectron.api.config;
+package com.inspectron.inspectron.infra.security;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtAccessDeniedHandler implements AccessDeniedHandler {
 
+    // Retorna resposta 403 quando o usuário não tem permissão para acessar o recurso.
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException)
             throws IOException, ServletException {

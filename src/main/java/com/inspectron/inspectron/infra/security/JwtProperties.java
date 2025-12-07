@@ -1,4 +1,4 @@
-package com.inspectron.inspectron.api.config;
+package com.inspectron.inspectron.infra.security;
 
 import java.time.Duration;
 import lombok.Getter;

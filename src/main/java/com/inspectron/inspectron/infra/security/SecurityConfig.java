@@ -1,5 +1,8 @@
-package com.inspectron.inspectron.api.config;
+package com.inspectron.inspectron.infra.security;
 
+import com.inspectron.inspectron.infra.security.JwtAccessDeniedHandler;
+import com.inspectron.inspectron.infra.security.JwtAuthenticationEntryPoint;
+import com.inspectron.inspectron.infra.security.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +25,7 @@ public class SecurityConfig {
     private final JwtAuthenticationEntryPoint authenticationEntryPoint;
     private final JwtAccessDeniedHandler accessDeniedHandler;
 
+    // Configura a cadeia de filtros HTTP e regras de autorização da aplicação.
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -45,6 +49,7 @@ public class SecurityConfig {
         return http.build();
     }
 
+    // Disponibiliza o encoder de senha usado nas operações de autenticação.
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

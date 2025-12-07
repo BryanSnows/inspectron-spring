@@ -1,5 +1,6 @@
 package com.inspectron.inspectron.api.controller;
 
+import com.inspectron.inspectron.api.domain.shared.dto.MessageResponse;
 import com.inspectron.inspectron.api.domain.user.dto.CreateUserRequest;
 import com.inspectron.inspectron.api.domain.user.dto.PaginationRequest;
 import com.inspectron.inspectron.api.domain.user.dto.QueryUserRequest;
