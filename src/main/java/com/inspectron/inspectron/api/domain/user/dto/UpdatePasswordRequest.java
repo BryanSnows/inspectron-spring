@@ -19,7 +19,7 @@ public class UpdatePasswordRequest {
     @Size(max = 64, message = "maxlength-newPassword")
     @Pattern(regexp = "^.{6,}$", message = "minlength-newPassword")
     @Pattern(
-            regexp = "^(?=.*[!@#$%^&*()_+\-={}\\[\\]\\|:;\"'<>,.?/])(?=.*[0-9])(?=.*[a-zA-Z]).{6,64}$",
+            regexp = "^(?=.*[!@#$%^&*()_+\\-={}\\[\\]\\|:;\"'<>,.?/])(?=.*[0-9])(?=.*[a-zA-Z]).{6,64}$",
             message = "invalid-newPassword")
     private String newPassword;
 }

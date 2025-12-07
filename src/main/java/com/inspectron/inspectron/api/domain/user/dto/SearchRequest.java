@@ -9,7 +9,7 @@ import lombok.Setter;
 public class SearchRequest {
 
     @Pattern(
-            regexp = "^(?!.*[~!#$%^&*()|+=?;:<>{}\[\\\\\]])",
+            regexp = "^(?!.*[~!#$%^&*()|+=?;:<>{}\\[\\\\\\]])",
             message = "No special characters")
     private String search;
 }
