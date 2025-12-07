@@ -2,7 +2,7 @@ package com.inspectron.inspectron.api.config;
 
 import com.inspectron.inspectron.api.domain.user.entity.User;
 import com.inspectron.inspectron.api.repository.UserRepository;
-import com.inspectron.inspectron.api.service.JwtTokenService;
+import com.inspectron.inspectron.api.service.AuthService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,7 +25,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private static final String BEARER_PREFIX = "Bearer ";
 
-    private final JwtTokenService jwtTokenService;
+    private final AuthService authService;
     private final UserRepository userRepository;
 
     @Override
@@ -35,7 +35,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         if (StringUtils.hasText(authorizationHeader) && authorizationHeader.startsWith(BEARER_PREFIX)) {
             String token = authorizationHeader.substring(BEARER_PREFIX.length());
-            Optional<UUID> userId = jwtTokenService.extractUserIdFromAccessToken(token);
+            Optional<UUID> userId = authService.extractUserIdFromAccessToken(token);
 
             if (userId.isPresent() && SecurityContextHolder.getContext().getAuthentication() == null) {
                 userRepository
